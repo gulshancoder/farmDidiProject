@@ -145,9 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           ElevatedButton(
-                              onPressed: () {
-                                print('kuch bhi');
-                              },
+                              onPressed: () {},
                               child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
@@ -165,69 +163,45 @@ class _MyHomePageState extends State<MyHomePage> {
                     Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          ElevatedButton(
-                              onPressed: () {
-                                print('button concept clear');
-                              },
-                              style: ElevatedButton.styleFrom(
-                                primary: Colors.grey,
-                              ),
-                              child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Container(
-                                      height: 10,
-                                      width: 16,
-                                      child: IconButton(
-                                        padding:
-                                            EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                        iconSize: 20,
-                                        icon: const Icon(
-                                          Icons.upload_file,
-                                        ),
-                                        onPressed: () => {
-                                          showDialog(
-                                              context: context,
-                                              builder: (BuildContext context) {
-                                                return AlertDialog(
-                                                    title: Text(
-                                                        "From where do you want to take the photo?"),
-                                                    content:
-                                                        SingleChildScrollView(
-                                                      child: ListBody(
-                                                        children: <Widget>[
-                                                          GestureDetector(
-                                                            child:
-                                                                Text("Gallery"),
-                                                            onTap: () {
-                                                              _openGallery();
-                                                            },
-                                                          ),
-                                                          Padding(
-                                                              padding:
-                                                                  EdgeInsets
-                                                                      .all(
-                                                                          8.0)),
-                                                          GestureDetector(
-                                                            child:
-                                                                Text("Camera"),
-                                                            onTap: () {
-                                                              _openCamera();
-                                                            },
-                                                          )
-                                                        ],
-                                                      ),
-                                                    ));
-                                              })
-                                        },
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 1,
-                                      width: 7,
-                                    ),
-                                    Text("Invoice")
-                                  ]))
+                          SizedBox(),
+                          ElevatedButton.icon(
+                            onPressed: () => {
+                              showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                        title: Text(
+                                            "From where do you want to take the photo?"),
+                                        content: SingleChildScrollView(
+                                          child: ListBody(
+                                            children: <Widget>[
+                                              GestureDetector(
+                                                child: Text("Gallery"),
+                                                onTap: () {
+                                                  _openGallery();
+                                                },
+                                              ),
+                                              Padding(
+                                                  padding: EdgeInsets.all(8.0)),
+                                              GestureDetector(
+                                                child: Text("Camera"),
+                                                onTap: () {
+                                                  _openCamera();
+                                                },
+                                              )
+                                            ],
+                                          ),
+                                        ));
+                                  })
+                            },
+                            label: Text("Invoice"),
+                            icon: Icon(
+                              Icons.upload_file,
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.grey,
+                            ),
+                          )
                         ]),
                   ]),
                   TableRow(children: [
